@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="relative">
-      {/* <Hello /> */}
+      <Hello />
       <Navbar />
       <Header />
       <About scrollDown={scrollYProgress} />
