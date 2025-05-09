@@ -1,17 +1,13 @@
-import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-
+import React, { useRef, useState } from 'react';
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import { HiArrowUturnLeft } from 'react-icons/hi2';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 function ProjectItem({
   img,
   bgColor,
   children,
   title,
-  delay = 0,
-  onMouseEnter,
-  onMouseLeave,
   desc,
   github,
   link,
@@ -26,85 +22,75 @@ function ProjectItem({
   }
 
   return (
-    <motion.div ref={ref} className="relative h-full w-full">
-      <button
-        className="flip-card h-full w-full cursor-none rounded-xl hover:grayscale-0 md:grayscale"
-        onClick={handleFlip}
-      >
+    <motion.div
+      ref={ref}
+      className="relative h-full w-full grayscale transition hover:grayscale-0"
+    >
+      <button className="h-full w-full rounded-xl" onClick={handleFlip}>
         <motion.div
-          className="flip-card-inner"
+          className="bg-lightgray relative h-full w-full rounded-xl border-2 border-[#323232] p-6 shadow-[4px_4px_0_#323232] transition-all duration-300 [transform-style:preserve-3d]"
           animate={{ rotateY: isFlipped ? 180 : 0 }}
-          style={{ transformStyle: 'preserve-3d' }}
           transition={{ duration: 0.6 }}
         >
-          {/* Front card*/}
-          <motion.div
-            className="flip-card-front relative"
-            style={{
-              backgroundColor: bgColor,
-              transformStyle: 'preserve-3d',
-            }}
-            initial={{ x: 50 }}
-            animate={isInView ? { x: 0 } : {}}
-            transition={{ duration: 0.5, delay }}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
+          {/* Front card */}
+          <div
+            className="absolute inset-0 flex flex-col overflow-hidden rounded-xl [backface-visibility:hidden]"
+            style={{ backgroundColor: bgColor || 'var(--bg-color)' }}
           >
             <img src={img} alt={title} className="h-full w-full object-cover" />
-            <div>{children}</div>
-          </motion.div>
+            {children}
+          </div>
 
-          {/* Back card*/}
-          <motion.div
-            className="flip-card-back relative flex h-full cursor-default flex-col justify-between border-2 p-5 text-left text-lg text-white"
-            style={{ transformStyle: 'preserve-3d' }}
+          {/* Back card */}
+          <div
+            className="bg-lightgray absolute inset-0 flex cursor-auto flex-col justify-between rounded-xl p-9 text-left text-[#323232] [backface-visibility:hidden] [transform:rotateY(180deg)]"
+            style={{ backgroundColor: '#d3d3d3' }}
           >
             <div>
-              <p className="text-2xl font-bold">{title}</p>
-              <p className="mt-2 text-gray-100">{desc}</p>
+              <div className="mb-2 flex justify-between font-bold">
+                <span className="text-4xl">{title}</span>
+                <div className="flex gap-4">
+                  {github && (
+                    <a
+                      href={github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-3xl hover:text-gray-500"
+                    >
+                      <FaGithub />
+                    </a>
+                  )}
+                  {link && (
+                    <a
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-2xl hover:text-gray-500"
+                    >
+                      <FaExternalLinkAlt />
+                    </a>
+                  )}
+                </div>
+              </div>
+              <p className="text-lg text-gray-700">{desc}</p>
 
               {/* Techno */}
               <div className="mt-4 flex flex-wrap gap-2">
                 {techno.map((tech, index) => (
                   <span
                     key={index}
-                    className="rounded-full border border-white/50 px-3 py-1 text-sm text-white"
+                    className="rounded-full border border-[#323232] bg-white px-3 py-1 text-sm text-[#323232] shadow-[2px_2px_0_#323232]"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
             </div>
-
-            {/* Links */}
-            <div className="mt-4 flex justify-end gap-4 text-xl text-white md:text-3xl">
-              {github && (
-                <a
-                  href={github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-gray-300"
-                >
-                  <FaGithub />
-                </a>
-              )}
-              {link && (
-                <a
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-gray-300"
-                >
-                  <FaExternalLinkAlt />
-                </a>
-              )}
-            </div>
-          </motion.div>
+          </div>
+          <div className="absolute right-4 top-4 block text-xl text-white">
+            <HiArrowUturnLeft />
+          </div>
         </motion.div>
-
-        <div className="absolute right-5 top-5 block text-xl font-semibold text-white md:hidden">
-          <HiArrowUturnLeft />
-        </div>
       </button>
     </motion.div>
   );

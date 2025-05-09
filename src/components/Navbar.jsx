@@ -1,10 +1,11 @@
+import { AnimatePresence, motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-scroll';
 
 function Navbar() {
   const [showBurger, setShowBurger] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +13,14 @@ function Navbar() {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsReady(true);
+    }, 7000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -26,21 +35,21 @@ function Navbar() {
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.3 }}
               onClick={() => setMenuOpen(true)}
-              className="rounded-full"
+              className="rounded-full border-4 border-black bg-white p-2 shadow-[6px_6px_0_#000]"
             >
               <div className="group cursor-pointer">
-                <div className="mb-2 h-[4px] w-8 bg-gray-800 transition-all duration-300 group-hover:translate-x-[15px]"></div>
-                <div className="mb-2 ml-2 h-[4px] w-8 bg-gray-800 transition-all duration-300 group-hover:translate-x-2"></div>
-                <div className="mb-1 ml-4 h-[4px] w-8 bg-gray-800 transition-all duration-300 group-hover:translate-x-[-1px]"></div>
+                <div className="mb-2 h-[4px] w-8 bg-black transition-all duration-300 group-hover:translate-x-[8px]"></div>
+                <div className="mb-2 ml-2 h-[4px] w-8 bg-black transition-all duration-300"></div>
+                <div className="mb-1 ml-4 h-[4px] w-8 bg-black transition-all duration-300 group-hover:translate-x-[-7px]"></div>
               </div>
             </motion.button>
           )}
         </AnimatePresence>
 
         {/* Desktop */}
-        {!showBurger && (
+        {!showBurger && isReady && (
           <div className="hidden w-full justify-end md:flex">
-            <ul className="flex space-x-20 text-xl uppercase text-gray-200">
+            <ul className="flex space-x-20 text-lg uppercase text-gray-200">
               <li>
                 <Link
                   to="about"
@@ -59,6 +68,16 @@ function Navbar() {
                   className="cursor-pointer"
                 >
                   Projets
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="journey"
+                  smooth={true}
+                  duration={500}
+                  className="cursor-pointer"
+                >
+                  Parcours
                 </Link>
               </li>
               <li>
@@ -110,19 +129,30 @@ function Navbar() {
               ease: 'easeInOut',
               borderRadius: { duration: 0.5, ease: 'easeInOut' },
             }}
-            className="fixed z-50 overflow-hidden bg-black p-6 text-white shadow-xl"
+            className="fixed z-50 overflow-hidden rounded-tl-[250px] border-l-4 border-r-2 border-black bg-white p-6 text-black shadow-[8px_8px_0_#000]"
           >
             <div className="flex justify-end">
               <button
                 onClick={() => setMenuOpen(false)}
-                className="text-3xl text-white"
+                className="flex h-12 w-12 items-center justify-center rounded-full border-4 border-black bg-white text-3xl font-bold text-black shadow-[6px_6px_0_#000]"
               >
-                ✕
+                <span className="transition-all duration-150 hover:rotate-180">
+                  ✕
+                </span>
               </button>
             </div>
 
             {/* Menu mobile */}
-            <div className="mt-10 flex flex-col space-y-6 text-center text-2xl text-white">
+            <div className="mt-10 flex flex-col space-y-6 text-center text-2xl font-bold text-black">
+              <Link
+                to="about"
+                smooth={true}
+                duration={500}
+                onClick={() => setMenuOpen(false)}
+                className="cursor-pointer"
+              >
+                À propos
+              </Link>
               <Link
                 to="projects"
                 smooth={true}
@@ -133,13 +163,13 @@ function Navbar() {
                 Projets
               </Link>
               <Link
-                to="about"
+                to="journey"
                 smooth={true}
                 duration={500}
                 onClick={() => setMenuOpen(false)}
                 className="cursor-pointer"
               >
-                À propos
+                Parcours
               </Link>
               <Link
                 to="contact"

@@ -5,10 +5,11 @@ const quote = 'Code is like humor. When you have to explain it, it’s bad.';
 const author = '— Cory House';
 
 function Hello() {
-  const words = quote.split(' ');
   const [visibleWords, setVisibleWords] = useState(0);
   const [startBlur, setStartBlur] = useState(false);
   const [hide, setHide] = useState(false);
+
+  const words = quote.split(' ');
 
   useEffect(() => {
     if (visibleWords < words.length) {
@@ -34,7 +35,7 @@ function Hello() {
           initial={{ height: '100vh' }}
           animate={{ height: hide ? '0vh' : '100vh' }}
           transition={{ duration: 1 }}
-          className="z-10 flex flex-col items-center justify-center overflow-hidden bg-black"
+          className="flex flex-col items-center justify-center overflow-hidden bg-black"
         >
           <div className="flex flex-wrap justify-center text-2xl text-white md:text-4xl">
             {words.map((word, index) => {

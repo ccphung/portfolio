@@ -1,31 +1,25 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
-import Hello from './components/Hello';
+import { Toaster } from 'react-hot-toast';
+
 import Navbar from './components/Navbar';
 import About from './sections/About';
+import Footer from './sections/Footer';
 import Header from './sections/Header';
 import Journey from './sections/Journey';
 import Projects from './sections/Projects';
-import { useScroll } from 'framer-motion';
-import AnimatedPath from './components/AnimatedPath';
 
 function App() {
-  const container = useRef();
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start start', 'end end'],
-  });
-
   return (
-    <div className="relative">
-      <Hello />
+    <div>
+      <Toaster position="top-center" reverseOrder={false} />
+      {/* <Hello /> */}
       <Navbar />
       <Header />
-      <About scrollDown={scrollYProgress} />
-      <div ref={container} className="relative h-[200vh]">
-        <Projects scrollDown={scrollYProgress} />
-        <Journey scrollDown={scrollYProgress} />
-      </div>
+      <About />
+      <Projects />
+      <Journey />
+      <Footer />
     </div>
   );
 }
