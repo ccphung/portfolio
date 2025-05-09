@@ -4,7 +4,6 @@ import { motion, useInView } from 'framer-motion';
 
 import AboutItem from '../components/AboutItem';
 import Laptop from '../components/Laptop';
-import ScrollFloat from '../components/ScrollFloat';
 
 export default function About() {
   const textRef = useRef(null);
@@ -22,15 +21,7 @@ export default function About() {
         >
           <div className="mb-9">
             <h1 className="mt-9 font-mono text-5xl font-semibold uppercase">
-              <ScrollFloat
-                animationDuration={1}
-                ease="back.inOut(2)"
-                scrollStart="center bottom+=50%"
-                scrollEnd="bottom bottom-=40%"
-                stagger={0.03}
-              >
-                About me
-              </ScrollFloat>{' '}
+              About me
             </h1>
             <motion.p
               initial={{ opacity: 0 }}

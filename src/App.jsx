@@ -8,12 +8,13 @@ import Footer from './sections/Footer';
 import Header from './sections/Header';
 import Journey from './sections/Journey';
 import Projects from './sections/Projects';
+import Hello from './sections/Hello';
 
 function App() {
   return (
     <div>
       <Toaster position="top-center" reverseOrder={false} />
-      {/* <Hello /> */}
+      <Hello />
       <Navbar />
       <Header />
       <About />
