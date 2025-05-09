@@ -94,12 +94,12 @@ export default function Journey() {
         <div className="flex flex-col items-center justify-center gap-20">
           <div className="flex h-full flex-col gap-20">
             {timeline.map((item, index) => {
-              const targetScale = 1 - (timeline.length - index) * 0.09;
+              const targetScale = 1 - (timeline.length - index) * 0.07;
 
               return (
                 <div
                   key={item.year}
-                  className="sticky top-72 flex w-full items-center justify-center gap-4 md:top-36"
+                  className="sticky top-9 flex w-full items-center justify-center gap-4 md:top-36"
                 >
                   <TimelineItem
                     i={index}
