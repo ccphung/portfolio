@@ -32,7 +32,7 @@ function Projects() {
         <div className="relative">
           <div className="flex items-center justify-center">
             <div className="w-full max-w-[100vw]">
-              <div className="grid h-[60vh] w-[90vw] grid-cols-1 space-y-4 md:flex md:h-[40vh] md:w-[70vw] md:space-x-3 md:space-y-0">
+              <div className="grid h-[90vh] w-[90vw] grid-cols-1 space-y-4 md:flex md:h-[40vh] md:w-[70vw] md:space-x-3 md:space-y-0">
                 <div className="md:w-1/2" ref={ref}>
                   <ProjectItem
                     title="Trip Track"
@@ -68,7 +68,7 @@ function Projects() {
                 </div>
               </div>
 
-              <div className="mt-4 flex h-[100vh] flex-col space-y-4 pb-4 md:h-[40vh] md:w-[70vw] md:flex-row md:space-x-3 md:space-y-0">
+              <div className="mt-4 flex h-[190vh] flex-col space-y-4 pb-4 md:h-[40vh] md:w-[70vw] md:flex-row md:space-x-3 md:space-y-0">
                 {[
                   { color: '#B56100', delay: 0 },
                   { color: 'green', delay: 0.1 },

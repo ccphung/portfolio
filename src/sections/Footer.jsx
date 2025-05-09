@@ -3,7 +3,7 @@ import ContactCard from '../components/Contact';
 
 export default function Footer() {
   return (
-    <footer className="relative h-[80vh] overflow-hidden bg-white md:min-h-[60vh] md:overflow-visible">
+    <footer className="relative h-[90vh] overflow-hidden bg-white md:min-h-[60vh] md:overflow-visible">
       <div className="absolute bottom-0 z-0 w-full">
         <svg
           className="h-[50vh] md:h-auto md:w-full"
