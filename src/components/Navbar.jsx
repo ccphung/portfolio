@@ -25,7 +25,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="fixed right-9 top-10 z-40 flex items-center justify-between px-6 py-4 md:right-0">
+      <nav className="fixed right-0 top-10 z-40 flex items-center justify-between px-6 py-4">
         <AnimatePresence>
           {showBurger && !menuOpen && (
             <motion.button
@@ -35,12 +35,12 @@ function Navbar() {
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.3 }}
               onClick={() => setMenuOpen(true)}
-              className="rounded-full border-4 border-black bg-white p-2 shadow-[6px_6px_0_#000]"
+              className="rounded-full border-2 border-black bg-white p-2 shadow-[4px_4px_0_#000] md:border-4 md:shadow-[6px_6px_0_#000]"
             >
               <div className="group cursor-pointer">
-                <div className="mb-2 h-[4px] w-8 bg-black transition-all duration-300 group-hover:translate-x-[8px]"></div>
-                <div className="mb-2 ml-2 h-[4px] w-8 bg-black transition-all duration-300"></div>
-                <div className="mb-1 ml-4 h-[4px] w-8 bg-black transition-all duration-300 group-hover:translate-x-[-7px]"></div>
+                <div className="mb-2 h-[3px] w-7 bg-black transition-all duration-300 group-hover:translate-x-[8px] md:h-[4px] md:w-8"></div>
+                <div className="mb-2 ml-2 h-[3px] w-7 bg-black transition-all duration-300 md:h-[4px] md:w-8"></div>
+                <div className="mb-1 ml-4 h-[3px] w-7 bg-black transition-all duration-300 group-hover:translate-x-[-7px] md:h-[4px] md:w-8"></div>
               </div>
             </motion.button>
           )}
