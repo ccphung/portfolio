@@ -3,19 +3,17 @@ import React, { useState } from 'react';
 const KeyButton = ({ label, onClick }) => {
   const [isPressed, setIsPressed] = useState(false);
 
-  // Gestion des événements pour desktop
   const handleMouseDown = () => setIsPressed(true);
   const handleMouseUp = () => {
     setIsPressed(false);
-    if (onClick) onClick(); // Appel de la fonction onClick passée en prop
+    if (onClick) onClick();
   };
   const handleMouseLeave = () => setIsPressed(false);
 
-  // Gestion des événements pour mobile (touch)
   const handleTouchStart = () => setIsPressed(true);
   const handleTouchEnd = () => {
     setIsPressed(false);
-    if (onClick) onClick(); // Appel de la fonction onClick passée en prop
+    if (onClick) onClick();
   };
   const handleTouchCancel = () => setIsPressed(false);
 

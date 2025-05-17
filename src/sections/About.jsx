@@ -30,10 +30,10 @@ export default function About() {
               className="text-xl text-gray-600"
             >
               Après 6 ans dans la finance, j’ai décidé de me lancer dans le
-              développement web. Spécialisé en React.js et Symfony, j'adore
-              apprendre de nouvelles choses et affiner mes compétences. Mon but
-              ? Ecrire du code propre et créer des expériences web qui sont à la
-              fois pratiques, esthétiques et fonctionnelles.
+              développement web. Spécialisé en React et Symfony, j'adore
+              apprendre et affiner mes compétences. Mon but ? Ecrire du code
+              propre et créer des expériences web qui sont à la fois esthétiques
+              et fonctionnelles.
             </motion.p>
           </div>
           <AboutItem />

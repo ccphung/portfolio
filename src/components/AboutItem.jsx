@@ -16,7 +16,8 @@ const cardData = [
     title: 'Certification Udemy',
     icon: <RiReactjsLine className="text-5xl" />,
     content: [
-      'The Ultimate React Course 2025: React, Next.js, Redux & More - Jonas Schmedtmann',
+      'The Ultimate React Course 2025 - Jonas Schmedtmann',
+      'React & TypeScript - Maximilian Schwarzmüller',
     ],
   },
   {

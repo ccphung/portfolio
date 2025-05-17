@@ -12,29 +12,29 @@ import Lenis from '@studio-freight/lenis/types';
 
 const timeline = [
   {
-    year: '2017',
+    year: '2016',
     title: 'Master 2 - Finance',
     company: 'Paris Nanterre',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      "Obtention du Master 2 Banque, Monnaie, Marchés à l'Université Paris Nanterre. Mon mémoire de fin d'études portait sur le Shadow Banking et ses impacts sur la stabilité financière.",
     img: diplomaImg2,
     alt: 'diploma',
   },
   {
-    year: '2018',
+    year: '2017',
     title: 'Lazard Frères Gestion',
     company: 'Middle Office Rétrocessions',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'Mission d’intérim de 9 mois eau poste Middle Office Rétrocessions. J’étais en charge du calcul des commissions de rétrocessions et du traitement des attestations dépositaires.',
     img: workingFinance,
     alt: 'working',
   },
   {
-    year: '2019',
+    year: '2017',
     title: 'Rothschild & Co Asset Management',
     company: 'Suivi du Passif',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      "En poste pendant 5 ans au sein du Middle Office Rétrocessions. Mes missions incluaient le calcul des rétrocessions, la gestion et mise en place des conventions, ainsi que le suivi du passif. J’ai également participé à plusieurs projets internes liés à l'automatisation et à l'amélioration des processus.",
     img: workingFinance2,
     alt: 'working',
   },
@@ -43,7 +43,7 @@ const timeline = [
     title: 'Graduate Développeur Web',
     company: 'Studi',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'Formation diplômante suivie chez Studi. Réalisation de l’épreuve finale (ECF) avec un projet développé en PHP/Symfony. Titre professionnel obtenu avec la spécialisation Développeur Web et Web Mobile.',
     img: diplomaImg,
     alt: 'diploma',
   },
@@ -52,7 +52,7 @@ const timeline = [
     title: 'Certification Udemy',
     company: '',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'Formation de 84 heures dispensée par Jonas Schmedtmann. Apprentissage complet de React, des Hooks, Redux, Context API, React Router, ainsi qu’une initiation approfondie à Next.js.',
     img: workingImg,
     alt: 'working',
   },

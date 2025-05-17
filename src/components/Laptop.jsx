@@ -28,7 +28,7 @@ const techData = {
     {
       icon: <SiJavascript style={{ color: '#F7DF1E' }} />,
       name: 'JavaScript',
-      level: 85,
+      level: 80,
     },
     {
       icon: <FaHtml5 style={{ color: '#E34F26' }} />,
@@ -43,14 +43,14 @@ const techData = {
     {
       icon: <SiTailwindcss style={{ color: '#06B6D4' }} />,
       name: 'Tailwind',
-      level: 80,
+      level: 90,
     },
   ],
   backend: [
     {
       icon: <FaNodeJs style={{ color: '#339933' }} />,
       name: 'Node.js',
-      level: 80,
+      level: 70,
     },
     {
       icon: <SiExpress style={{ color: '#000000' }} />,
@@ -60,7 +60,7 @@ const techData = {
     {
       icon: <SiMongodb style={{ color: '#47A248' }} />,
       name: 'MongoDB',
-      level: 70,
+      level: 76,
     },
   ],
 };
