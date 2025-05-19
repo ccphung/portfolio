@@ -30,7 +30,7 @@ export default function Contact() {
           >
             Me contacter
           </span>
-          <label className="relative inline-block h-7 w-14 cursor-pointer">
+          <label className="relative inline-block h-7 w-16 cursor-pointer">
             <input
               type="checkbox"
               className="peer hidden"
