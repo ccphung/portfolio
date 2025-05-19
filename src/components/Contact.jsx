@@ -21,7 +21,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="relative flex items-center justify-center">
+    <div className="relative flex items-center justify-center" id="contact">
       <div className="relative h-[430px] w-[320px] [perspective:1000px]">
         {/* Toggle Switch */}
         <div className="absolute -top-12 left-1/2 z-20 flex -translate-x-1/2 items-center gap-6">

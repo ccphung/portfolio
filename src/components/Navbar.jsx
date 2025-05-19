@@ -1,5 +1,5 @@
-import { AnimatePresence, motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 
 function Navbar() {
@@ -45,54 +45,6 @@ function Navbar() {
             </motion.button>
           )}
         </AnimatePresence>
-
-        {/* Desktop */}
-        {!showBurger && isReady && (
-          <div className="hidden w-full justify-end md:flex">
-            <ul className="flex space-x-20 text-lg uppercase text-gray-200">
-              <li>
-                <Link
-                  to="about"
-                  smooth={true}
-                  duration={500}
-                  className="cursor-pointer"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="projects"
-                  smooth={true}
-                  duration={500}
-                  className="cursor-pointer"
-                >
-                  Projets
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="journey"
-                  smooth={true}
-                  duration={500}
-                  className="cursor-pointer"
-                >
-                  Parcours
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="contact"
-                  smooth={true}
-                  duration={500}
-                  className="cursor-pointer"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-        )}
       </nav>
 
       <AnimatePresence>
@@ -143,7 +95,7 @@ function Navbar() {
             </div>
 
             {/* Menu mobile */}
-            <div className="mt-10 flex flex-col space-y-6 text-center text-2xl font-bold text-black">
+            <div className="mt-10 flex flex-col space-y-6 text-center text-2xl font-bold">
               <Link
                 to="about"
                 smooth={true}

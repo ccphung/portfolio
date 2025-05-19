@@ -76,6 +76,7 @@ export default function Journey() {
 
   return (
     <section
+      id="journey"
       className="relative z-20 flex min-h-screen w-full flex-col items-center justify-start py-20"
       style={{
         backgroundColor: '#AE8FDB',
