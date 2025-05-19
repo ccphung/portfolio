@@ -13,7 +13,7 @@ const cardData = [
     ],
   },
   {
-    title: 'Certification Udemy',
+    title: 'Certifications Udemy',
     icon: <RiReactjsLine className="text-5xl" />,
     content: [
       'The Ultimate React Course 2025 - Jonas Schmedtmann',
@@ -36,7 +36,7 @@ function AboutItem() {
         {cardData.map((card, index) => (
           <div key={card.title} className="flex items-start md:w-1/3">
             {index > 0 && (
-              <div className="mx-4 hidden h-24 border-l-2 border-gray-300 md:block"></div>
+              <div className="mx-4 hidden h-40 border-l-2 border-gray-300 md:block"></div>
             )}
             <div className="flex flex-col text-left">
               <div>{card.icon}</div>

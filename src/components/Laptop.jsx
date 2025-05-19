@@ -3,20 +3,17 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import KeyButton from '../components/KeyButton';
 
+import { FaChartLine, FaCss3Alt, FaHtml5, FaReact } from 'react-icons/fa';
 import {
-  FaChartLine,
-  FaCss3Alt,
-  FaHtml5,
-  FaNodeJs,
-  FaReact,
-} from 'react-icons/fa';
-import {
-  SiExpress,
   SiJavascript,
   SiMongodb,
+  SiMysql,
+  SiPhp,
+  SiSymfony,
   SiTailwindcss,
 } from 'react-icons/si';
 import laptopImage from '../assets/images/about/laptop.png';
+import FuzzyText from './FuzzyText';
 
 const techData = {
   frontend: [
@@ -48,14 +45,19 @@ const techData = {
   ],
   backend: [
     {
-      icon: <FaNodeJs style={{ color: '#339933' }} />,
-      name: 'Node.js',
-      level: 70,
+      icon: <SiPhp style={{ color: '#777BB4' }} />,
+      name: 'PHP',
+      level: 80,
     },
     {
-      icon: <SiExpress style={{ color: '#000000' }} />,
-      name: 'Express',
-      level: 75,
+      icon: <SiSymfony style={{ color: '#000000' }} />,
+      name: 'Symfony',
+      level: 78,
+    },
+    {
+      icon: <SiMysql style={{ color: '#00758F' }} />,
+      name: 'MySQL',
+      level: 82,
     },
     {
       icon: <SiMongodb style={{ color: '#47A248' }} />,
@@ -73,23 +75,34 @@ function Laptop() {
   };
   return (
     <div className="flex flex-col-reverse items-center justify-center gap-8 md:flex-row">
-      <div className="flex flex-wrap justify-center gap-4 md:w-1/3">
-        {techData.frontend.map((tech) => (
-          <KeyButton
-            key={tech.name}
-            label={tech.icon}
-            onClick={() => handleKeyClick(tech)}
-          />
-        ))}
-        {techData.backend.map((tech) => (
-          <KeyButton
-            key={tech.name}
-            label={tech.icon}
-            onClick={() => handleKeyClick(tech)}
-          />
-        ))}
-      </div>
+      <div className="flex flex-col items-center font-mono md:w-1/3">
+        <div className="hidden md:block">
+          <FuzzyText
+            baseIntensity={0.05}
+            hoverIntensity={0.02}
+            enableHover={true}
+          >
+            Cliquez sur une touche
+          </FuzzyText>
+        </div>
 
+        <div className="flex flex-wrap justify-center gap-4 md:mt-5">
+          {techData.frontend.map((tech) => (
+            <KeyButton
+              key={tech.name}
+              label={tech.icon}
+              onClick={() => handleKeyClick(tech)}
+            />
+          ))}
+          {techData.backend.map((tech) => (
+            <KeyButton
+              key={tech.name}
+              label={tech.icon}
+              onClick={() => handleKeyClick(tech)}
+            />
+          ))}
+        </div>
+      </div>
       <div className="relative">
         <img src={laptopImage} alt="Laptop" className="w-full" />
         <div className="absolute z-10 hidden -translate-x-[20%] rotate-[33deg] text-center text-xl font-bold text-gray-400 md:left-[62%] md:top-[22%] md:block md:rotate-[31deg] xl:top-[21%]">
@@ -109,10 +122,61 @@ function Laptop() {
             </div>
           </div>
         ) : (
-          <div className="absolute left-[50%] top-[25%] z-10 -translate-x-[20%] rotate-[31deg] text-center text-xl font-bold text-gray-400 md:left-[55%] md:top-[30%] md:rotate-[32deg]">
-            <p className="animate-blink text-center font-mono text-xl text-gray-500">
-              Cliquez sur une touche
-            </p>
+          <div className="z-10 text-center text-xl font-bold text-gray-400">
+            <div className="absolute left-[50%] top-[25%] -translate-x-[20%] rotate-[31deg] md:left-[55%] md:top-[30%] md:rotate-[32deg]">
+              <p className="animate-blink mb-2 flex font-mono text-xl text-gray-500 md:hidden">
+                Cliquez sur une touche
+              </p>
+            </div>
+
+            <div className="hidden md:flex">
+              <div className="absolute left-[55%] top-[25%] flex -translate-x-[20%] rotate-[32deg] items-center gap-5 font-mono">
+                <span className="flex items-center gap-1 text-gray-400">
+                  React
+                </span>
+                <div className="h-2 w-24 rounded bg-gray-300">
+                  <div
+                    className="h-2 rounded bg-gray-500"
+                    style={{ width: '90%' }}
+                  ></div>
+                </div>
+              </div>
+
+              <div className="absolute left-[54%] top-[32%] flex -translate-x-[20%] rotate-[33deg] items-center gap-5 font-mono">
+                <span className="flex items-center gap-1 text-gray-400">
+                  JavaScript
+                </span>
+                <div className="h-2 w-24 rounded bg-gray-300">
+                  <div
+                    className="h-2 rounded bg-gray-500"
+                    style={{ width: '80%' }}
+                  ></div>
+                </div>
+              </div>
+
+              <div className="absolute left-[52%] top-[36%] flex -translate-x-[20%] rotate-[33deg] items-center gap-5 font-mono">
+                <span className="flex items-center gap-1 text-gray-400">
+                  Node.js
+                </span>
+                <div className="h-2 w-24 rounded bg-gray-300">
+                  <div
+                    className="h-2 rounded bg-gray-500"
+                    style={{ width: '70%' }}
+                  ></div>
+                </div>
+              </div>
+              <div className="absolute left-[50%] top-[41%] flex -translate-x-[20%] rotate-[34deg] items-center gap-5 font-mono">
+                <span className="flex items-center gap-1 text-gray-400">
+                  MongoDB
+                </span>
+                <div className="h-2 w-24 rounded bg-gray-300">
+                  <div
+                    className="h-2 rounded bg-gray-500"
+                    style={{ width: '76%' }}
+                  ></div>
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </div>

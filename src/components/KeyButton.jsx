@@ -27,7 +27,7 @@ const KeyButton = ({ label, onClick }) => {
       onTouchEnd={handleTouchEnd}
       onTouchCancel={handleTouchCancel}
     >
-      <span className="absolute -bottom-2 right-5 z-10 flex h-full items-center justify-center text-2xl font-semibold text-white">
+      <span className="absolute bottom-0 left-0 right-0 z-10 flex h-full items-center justify-center text-4xl font-semibold text-white">
         {label}
       </span>
     </div>
