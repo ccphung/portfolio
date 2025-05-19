@@ -3,7 +3,7 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 
 export default function TimelineItem({
   title,
-  company,
+  header,
   description,
   img,
   alt,
@@ -33,11 +33,9 @@ export default function TimelineItem({
     >
       <div className="group relative flex w-full max-w-xl flex-col justify-between rounded-xl border-2 border-[#323232] bg-gray-200 shadow-[4px_4px_0_#323232]">
         <h3 className="border-b-2 border-[#323232] p-4 pb-1 text-2xl font-semibold text-[#323232]">
-          <span className="text-4xl">{year} </span> {title}
+          <span className="text-4xl">{year} </span> {header}
         </h3>
-        <p className="px-6 pt-3 text-lg font-medium text-[#323232]">
-          {company}
-        </p>
+        <p className="px-6 pt-3 text-lg font-medium text-[#323232]">{title}</p>
         {description && (
           <p className="mt-2 px-6 text-lg text-[#323232]">{description}</p>
         )}
