@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         cedarville: ['Cedarville Cursive', 'cursive'],
+        josefin: ['"Josefin Sans", sans-serif'],
       },
     },
   },

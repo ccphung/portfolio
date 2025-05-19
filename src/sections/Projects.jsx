@@ -39,16 +39,19 @@ function Projects() {
                 <div className="md:w-1/2" ref={ref}>
                   <ProjectItem
                     title="Trip Track"
+                    largeTitle={true}
                     img={triptrack}
-                    bgColor="#bba3ff"
+                    bgColor="#8A7899"
                     desc="Application personnelle développée avec React, Redux et Tailwind CSS, permettant aux utilisateurs de planifier leurs voyages, organiser les étapes et gérer leur budget."
                     techno={['React', 'Redux', 'Tailwind']}
+                    text="large"
                     github="https://github.com/ccphung/triptrack"
                     link="https://triptrack-teal.vercel.app/"
+                    imgCover="cover"
                   >
                     <motion.p
                       style={{ x: text1X }}
-                      className="absolute bottom-20 right-10 text-3xl font-semibold text-white md:text-2xl"
+                      className="absolute bottom-20 right-10 text-3xl font-semibold text-white md:text-4xl"
                     >
                       Trip Track
                     </motion.p>
@@ -64,13 +67,18 @@ function Projects() {
                   <ProjectItem
                     title="Wild Oasis"
                     img={wildoasis}
-                    bgColor="white"
+                    bgColor="		#7A7A7A"
                     desc="Wild Oasis – Application de réservation de cabines développée avec Next.js, Supabase et React Query, dans le cadre de la formation Udemy de Jonas Schmedtmann. Inclut gestion des utilisateurs, réservations et back-office."
                     delay={0.2}
+                    largeTitle={true}
                     techno={['Next.js', 'Supabase', 'React Query']}
                     github="https://github.com/ccphung/the-wild-oasis-client"
                     link="https://the-wild-oasis-client-kappa.vercel.app/"
-                  />
+                  >
+                    <p className="font-josefin absolute left-0 right-0 top-5 text-2xl font-semibold text-gray-100">
+                      The Wild Oasis
+                    </p>
+                  </ProjectItem>
                 </div>
               </div>
 
@@ -78,13 +86,21 @@ function Projects() {
                 <ProjectItem
                   title="React Bites"
                   img={reactbites}
-                  bgColor="#B56100"
+                  bgColor="#d7894a"
                   desc="Application personnelle inspirée de Marmiton, développée avec React, Context API et useReducer. Permet de rechercher des recettes, consulter les détails et les enregistrer dans une liste personnalisée."
                   delay={0}
                   techno={['React JS', 'Context API', 'useReducer']}
                   github="https://github.com/ccphung/react-bites"
                   link="https://react-bites.vercel.app/"
-                />
+                  imgCover="cover"
+                >
+                  <p
+                    style={{ x: text1X }}
+                    className="absolute left-0 right-0 top-5 text-2xl font-semibold text-white"
+                  >
+                    React Bites 🍜
+                  </p>
+                </ProjectItem>
                 <ProjectItem
                   title="Zoo Arcadia"
                   img={zoo}
@@ -93,6 +109,8 @@ function Projects() {
                   github="https://github.com/ccphung/zoo-broceliande"
                   link="https://zoo-broceliande-arcadia-c26161614893.herokuapp.com/"
                   delay={0.1}
+                  bgColor="	#2E4F3E"
+                  rotate={true}
                 />
                 <ProjectItem
                   title="usePopcorn"
@@ -102,15 +120,19 @@ function Projects() {
                   techno={['React JS', 'Context API', 'useReducer']}
                   github="https://github.com/ccphung/usePopcorn"
                   link="https://use-popcorn-blush.vercel.app/"
+                  bgColor="	#D4B03D"
+                  zoom={true}
+                  imgCover="cover"
                 />
                 <ProjectItem
                   title="React Mentoring"
                   img={reactMentoring}
                   desc="React Mentoring – Application React/TypeScript pour pratiquer le typage avec TypeScript et gérer des états de manière typée (formation avec Maximilian)."
                   delay={0.3}
+                  bgColor="#A89898"
                   techno={['React', 'TypeScript', 'Context API', 'useReducer']}
                   github="https://github.com/ccphung/react-mentoring"
-                  link="https://react-mentoring-415882h2m-ccphungs-projects.vercel.app/"
+                  link="https://react-mentoring-sage.vercel.app/"
                 />
               </div>
             </div>

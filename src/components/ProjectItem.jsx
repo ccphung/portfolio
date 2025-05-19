@@ -1,4 +1,4 @@
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import React, { useRef, useState } from 'react';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import { HiArrowUturnLeft } from 'react-icons/hi2';
@@ -12,10 +12,13 @@ function ProjectItem({
   github,
   link,
   techno = [],
+  largeTitle,
+  rotate,
+  zoom,
+  imgCover,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '0px 0px -50px 0px' });
 
   function handleFlip() {
     setIsFlipped((prev) => !prev);
@@ -24,7 +27,7 @@ function ProjectItem({
   return (
     <motion.div
       ref={ref}
-      className="relative h-full w-full grayscale transition hover:grayscale-0"
+      className="relative h-full w-full transition hover:grayscale-0"
     >
       <button className="h-full w-full rounded-xl" onClick={handleFlip}>
         <motion.div
@@ -37,7 +40,11 @@ function ProjectItem({
             className="absolute inset-0 flex flex-col overflow-hidden rounded-xl [backface-visibility:hidden]"
             style={{ backgroundColor: bgColor || 'var(--bg-color)' }}
           >
-            <img src={img} alt={title} className="h-full w-full object-cover" />
+            <img
+              src={img}
+              alt={title}
+              className={`right-0 h-full transform ${imgCover === 'cover' ? 'object-cover' : 'object-contain'} ${rotate ? 'rotate-[-23deg] scale-150 transition-all duration-300 hover:rotate-[0deg] hover:scale-100' : ''} ${zoom ? 'transition-all duration-300 hover:scale-125' : ''}`}
+            />
             {children}
           </div>
 
@@ -48,7 +55,11 @@ function ProjectItem({
           >
             <div>
               <div className="mb-2 flex justify-between font-bold">
-                <span className="text-4xl">{title}</span>
+                <span
+                  className={`text-2xl ${largeTitle ? 'md:text-4xl' : 'md:text-xl'} `}
+                >
+                  {title}
+                </span>
                 <div className="flex gap-4">
                   {github && (
                     <a
@@ -72,14 +83,14 @@ function ProjectItem({
                   )}
                 </div>
               </div>
-              <p className="text-lg text-gray-700">{desc}</p>
+              <p className="text-gray-700 md:text-lg">{desc}</p>
 
               {/* Techno */}
-              <div className="mt-4 flex flex-wrap gap-2">
+              <div className="absolute bottom-5 mt-4 flex flex-wrap gap-2">
                 {techno.map((tech, index) => (
                   <span
                     key={index}
-                    className="rounded-full border border-[#323232] bg-white px-3 py-1 text-sm text-[#323232] shadow-[2px_2px_0_#323232]"
+                    className="rounded-full border border-[#323232] bg-white px-3 py-1 text-[10px] text-[#323232] shadow-[2px_2px_0_#323232] md:text-sm"
                   >
                     {tech}
                   </span>
