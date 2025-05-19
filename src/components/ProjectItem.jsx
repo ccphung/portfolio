@@ -12,7 +12,7 @@ function ProjectItem({
   github,
   link,
   techno = [],
-  largeTitle,
+  largeCard,
   rotate,
   zoom,
   imgCover,
@@ -56,7 +56,7 @@ function ProjectItem({
             <div>
               <div className="mb-2 flex justify-between font-bold">
                 <span
-                  className={`text-2xl ${largeTitle ? 'md:text-4xl' : 'md:text-xl'} `}
+                  className={`text-2xl ${largeCard ? 'md:text-4xl' : 'md:text-xl'} `}
                 >
                   {title}
                 </span>
@@ -83,7 +83,11 @@ function ProjectItem({
                   )}
                 </div>
               </div>
-              <p className="text-gray-700 md:text-lg">{desc}</p>
+              <p
+                className={`text-gray-700 ${largeCard ? 'md:text-lg' : 'md:text-sm'}`}
+              >
+                {desc}
+              </p>
 
               {/* Techno */}
               <div className="absolute bottom-5 mt-4 flex flex-wrap gap-2">
