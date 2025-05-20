@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import KeyButton from '../components/KeyButton';
 import { FaChartLine, FaCss3Alt, FaHtml5, FaReact } from 'react-icons/fa';
 import {
   SiJavascript,
@@ -11,6 +10,7 @@ import {
   SiSymfony,
   SiTailwindcss,
 } from 'react-icons/si';
+import KeyButton from '../components/KeyButton';
 
 import laptopImage from '../assets/images/about/laptop.png';
 import FuzzyText from './FuzzyText';
@@ -20,7 +20,7 @@ const techData = {
     {
       icon: <FaHtml5 />,
       name: 'HTML5',
-      level: 95,
+      level: 90,
       color: '#E34F26',
     },
     {
@@ -32,19 +32,19 @@ const techData = {
     {
       icon: <SiJavascript />,
       name: 'JavaScript',
-      level: 80,
+      level: 75,
       color: '#F7DF1E',
     },
     {
       icon: <FaReact />,
       name: 'React',
-      level: 90,
+      level: 88,
       color: '#61DAFB',
     },
     {
       icon: <SiNextdotjs />,
       name: 'Next.js',
-      level: 85,
+      level: 80,
       color: '#000000',
     },
     {
@@ -58,35 +58,29 @@ const techData = {
     {
       icon: <SiPhp />,
       name: 'PHP',
-      level: 80,
+      level: 65,
       color: '#777BB4',
     },
     {
       icon: <SiSymfony />,
       name: 'Symfony',
-      level: 78,
+      level: 77,
       color: '#000000',
     },
     {
       icon: <SiMysql />,
       name: 'MySQL',
-      level: 82,
+      level: 70,
       color: '#4479A1',
     },
     {
       icon: <SiMongodb />,
       name: 'MongoDB',
-      level: 76,
+      level: 70,
       color: '#47A248',
     },
   ],
 };
-
-function getTechColor(name) {
-  const allTechs = [...techData.frontend, ...techData.backend];
-  const found = allTechs.find((tech) => tech.name === name);
-  return found?.color || '#A0AEC0';
-}
 
 function Laptop() {
   const [selectedTech, setSelectedTech] = useState(null);
@@ -155,7 +149,7 @@ function Laptop() {
                 <div className="h-2 w-24 rounded bg-gray-300">
                   <div
                     className="h-2 rounded bg-gray-500"
-                    style={{ width: '90%' }}
+                    style={{ width: '88%' }}
                   ></div>
                 </div>
               </div>
@@ -167,31 +161,31 @@ function Laptop() {
                 <div className="h-2 w-24 rounded bg-gray-300">
                   <div
                     className="h-2 rounded bg-gray-500"
-                    style={{ width: '80%' }}
+                    style={{ width: '75%' }}
                   ></div>
                 </div>
               </div>
 
               <div className="absolute left-[52%] top-[36%] flex -translate-x-[20%] rotate-[33deg] items-center gap-5 font-mono">
                 <span className="flex items-center gap-1 text-gray-400">
-                  Node.js
+                  Symfony
                 </span>
                 <div className="h-2 w-24 rounded bg-gray-300">
                   <div
                     className="h-2 rounded bg-gray-500"
-                    style={{ width: '70%' }}
+                    style={{ width: '77%' }}
                   ></div>
                 </div>
               </div>
 
               <div className="absolute left-[50%] top-[41%] flex -translate-x-[20%] rotate-[34deg] items-center gap-5 font-mono">
                 <span className="flex items-center gap-1 text-gray-400">
-                  MongoDB
+                  MySQL
                 </span>
                 <div className="h-2 w-24 rounded bg-gray-300">
                   <div
                     className="h-2 rounded bg-gray-500"
-                    style={{ width: '76%' }}
+                    style={{ width: '70%' }}
                   ></div>
                 </div>
               </div>
