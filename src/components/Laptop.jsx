@@ -1,71 +1,92 @@
 import React, { useEffect, useState } from 'react';
-
 import { motion } from 'framer-motion';
 import KeyButton from '../components/KeyButton';
-
 import { FaChartLine, FaCss3Alt, FaHtml5, FaReact } from 'react-icons/fa';
 import {
   SiJavascript,
   SiMongodb,
   SiMysql,
+  SiNextdotjs,
   SiPhp,
   SiSymfony,
   SiTailwindcss,
 } from 'react-icons/si';
+
 import laptopImage from '../assets/images/about/laptop.png';
 import FuzzyText from './FuzzyText';
 
 const techData = {
   frontend: [
     {
-      icon: <FaReact style={{ color: '#61DAFB' }} />,
-      name: 'React',
-      level: 90,
-    },
-    {
-      icon: <SiJavascript style={{ color: '#F7DF1E' }} />,
-      name: 'JavaScript',
-      level: 80,
-    },
-    {
-      icon: <FaHtml5 style={{ color: '#E34F26' }} />,
+      icon: <FaHtml5 />,
       name: 'HTML5',
       level: 95,
+      color: '#E34F26',
     },
     {
-      icon: <FaCss3Alt style={{ color: '#1572B6' }} />,
+      icon: <FaCss3Alt />,
       name: 'CSS3',
       level: 90,
+      color: '#1572B6',
     },
     {
-      icon: <SiTailwindcss style={{ color: '#06B6D4' }} />,
+      icon: <SiJavascript />,
+      name: 'JavaScript',
+      level: 80,
+      color: '#F7DF1E',
+    },
+    {
+      icon: <FaReact />,
+      name: 'React',
+      level: 90,
+      color: '#61DAFB',
+    },
+    {
+      icon: <SiNextdotjs />,
+      name: 'Next.js',
+      level: 85,
+      color: '#000000',
+    },
+    {
+      icon: <SiTailwindcss />,
       name: 'Tailwind',
       level: 90,
+      color: '#38BDF8',
     },
   ],
   backend: [
     {
-      icon: <SiPhp style={{ color: '#777BB4' }} />,
+      icon: <SiPhp />,
       name: 'PHP',
       level: 80,
+      color: '#777BB4',
     },
     {
-      icon: <SiSymfony style={{ color: '#000000' }} />,
+      icon: <SiSymfony />,
       name: 'Symfony',
       level: 78,
+      color: '#000000',
     },
     {
-      icon: <SiMysql style={{ color: '#00758F' }} />,
+      icon: <SiMysql />,
       name: 'MySQL',
       level: 82,
+      color: '#4479A1',
     },
     {
-      icon: <SiMongodb style={{ color: '#47A248' }} />,
+      icon: <SiMongodb />,
       name: 'MongoDB',
       level: 76,
+      color: '#47A248',
     },
   ],
 };
+
+function getTechColor(name) {
+  const allTechs = [...techData.frontend, ...techData.backend];
+  const found = allTechs.find((tech) => tech.name === name);
+  return found?.color || '#A0AEC0';
+}
 
 function Laptop() {
   const [selectedTech, setSelectedTech] = useState(null);
@@ -73,6 +94,7 @@ function Laptop() {
   const handleKeyClick = (tech) => {
     setSelectedTech(tech);
   };
+
   return (
     <div className="flex flex-col-reverse items-center justify-center gap-8 md:flex-row">
       <div className="flex flex-col items-center font-mono md:w-1/3">
@@ -87,24 +109,21 @@ function Laptop() {
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 md:mt-5">
-          {techData.frontend.map((tech) => (
+          {[...techData.frontend, ...techData.backend].map((tech) => (
             <KeyButton
               key={tech.name}
               label={tech.icon}
               onClick={() => handleKeyClick(tech)}
-            />
-          ))}
-          {techData.backend.map((tech) => (
-            <KeyButton
-              key={tech.name}
-              label={tech.icon}
-              onClick={() => handleKeyClick(tech)}
+              isSelected={selectedTech?.name === tech.name}
+              color={tech.color}
             />
           ))}
         </div>
       </div>
+
       <div className="relative">
         <img src={laptopImage} alt="Laptop" className="w-full" />
+
         <div className="absolute z-10 hidden -translate-x-[20%] rotate-[33deg] text-center text-xl font-bold text-gray-400 md:left-[62%] md:top-[22%] md:block md:rotate-[31deg] xl:top-[21%]">
           <p className="font-mono text-2xl text-gray-500">Compétences</p>
         </div>
@@ -112,8 +131,7 @@ function Laptop() {
         {selectedTech ? (
           <div className="absolute left-[58%] top-[24%] z-10 -translate-x-[20%] rotate-[32deg] text-xl font-bold text-gray-400 md:left-[60%] md:top-[30%] md:text-3xl">
             <p>{selectedTech.name}</p>
-
-            <div className="flex items-center justify-center gap-2 text-xl font-semibold text-gray-500 md:text-3xl">
+            <div className="flex items-center justify-center gap-2 text-xl font-semibold md:text-3xl">
               <FaChartLine />
               <PercentageCounter
                 key={selectedTech.name}
@@ -165,6 +183,7 @@ function Laptop() {
                   ></div>
                 </div>
               </div>
+
               <div className="absolute left-[50%] top-[41%] flex -translate-x-[20%] rotate-[34deg] items-center gap-5 font-mono">
                 <span className="flex items-center gap-1 text-gray-400">
                   MongoDB

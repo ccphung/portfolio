@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const KeyButton = ({ label, onClick }) => {
+const KeyButton = ({ label, onClick, isSelected, color }) => {
   const [isPressed, setIsPressed] = useState(false);
 
   const handleMouseDown = () => setIsPressed(true);
@@ -17,6 +17,8 @@ const KeyButton = ({ label, onClick }) => {
   };
   const handleTouchCancel = () => setIsPressed(false);
 
+  const iconColor = isSelected ? color : '#bac6d5';
+
   return (
     <div
       className={isPressed ? 'keyboard-pressed' : 'keyboard-default'}
@@ -27,7 +29,10 @@ const KeyButton = ({ label, onClick }) => {
       onTouchEnd={handleTouchEnd}
       onTouchCancel={handleTouchCancel}
     >
-      <span className="absolute bottom-0 left-0 right-0 z-10 flex h-full items-center justify-center text-4xl font-semibold text-white">
+      <span
+        className="absolute bottom-0 left-0 right-0 z-10 flex h-full items-center justify-center text-4xl font-semibold"
+        style={{ color: iconColor }}
+      >
         {label}
       </span>
     </div>
