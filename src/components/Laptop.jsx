@@ -9,6 +9,8 @@ import {
   SiPhp,
   SiSymfony,
   SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
 } from 'react-icons/si';
 import KeyButton from '../components/KeyButton';
 
@@ -78,6 +80,19 @@ const techData = {
       name: 'MongoDB',
       level: 70,
       color: '#47A248',
+    },
+
+    {
+      icon: <SiNodedotjs />,
+      name: 'Node.js',
+      level: 62,
+      color: '#339933',
+    },
+    {
+      icon: <SiExpress />,
+      name: 'Express.js',
+      level: 65,
+      color: '#000000',
     },
   ],
 };
