@@ -9,6 +9,7 @@ import Header from './sections/Header';
 import Journey from './sections/Journey';
 import Projects from './sections/Projects';
 import Hello from './sections/Hello';
+import '../i18n';
 
 function App() {
   return (

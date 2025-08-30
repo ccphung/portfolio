@@ -1,35 +1,29 @@
 import React from 'react';
-
 import { BiBookAlt, BiBookBookmark } from 'react-icons/bi';
 import { RiReactjsLine } from 'react-icons/ri';
-
-const cardData = [
-  {
-    title: 'Diplômes',
-    icon: <BiBookBookmark className="text-5xl" />,
-    content: [
-      'Titre Professionnel Développeur Web & Web Mobile',
-      'Master 2 - Finance',
-    ],
-  },
-  {
-    title: 'Certifications Udemy',
-    icon: <RiReactjsLine className="text-5xl" />,
-    content: [
-      'The Ultimate React Course 2025 - Jonas Schmedtmann',
-      'React & TypeScript - Maximilian Schwarzmüller',
-    ],
-  },
-  {
-    title: 'En cours',
-    icon: <BiBookAlt className="text-5xl" />,
-    content: [
-      'Certification Udemy : Master Node JS & Deno.js - Maximilian Schwarzmüller',
-    ],
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 function AboutItem() {
+  const { t } = useTranslation('common');
+
+  const cardData = [
+    {
+      title: t('about.cards.diplomas.title'),
+      icon: <BiBookBookmark className="text-5xl" />,
+      content: t('about.cards.diplomas.content', { returnObjects: true }),
+    },
+    {
+      title: t('about.cards.certifications.title'),
+      icon: <RiReactjsLine className="text-5xl" />,
+      content: t('about.cards.certifications.content', { returnObjects: true }),
+    },
+    {
+      title: t('about.cards.inProgress.title'),
+      icon: <BiBookAlt className="text-5xl" />,
+      content: t('about.cards.inProgress.content', { returnObjects: true }),
+    },
+  ];
+
   return (
     <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-1">
       <div className="flex w-full flex-col justify-start gap-6 md:flex-row md:justify-center">

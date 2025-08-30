@@ -1,0 +1,99 @@
+{
+  "header": {
+    "greeting": "Hi! I am Cédric Phung",
+    "webDeveloper": "Web Developer",
+    "meAlt": "Picture of Cédric",
+    "availableToWork": "Available to work"
+  },
+  "footer": {
+    "siteMadeBy": "Site réalisé par {{name}} :)"
+  },
+
+  "aboutMe": {
+    "title": "About me",
+    "description": "After 6 years in finance, I transitioned into web development. Recently, I built a freelance e-commerce project using Shopify and Next.js, styled with Tailwind CSS, and optimized the user experience. I enjoy writing clean code and creating elegant, functional web interfaces."
+  },
+  "journey": {
+    "circularText": "*MY*JOURNEY",
+    "master": "Master 2 - Finance",
+    "masterDesc": "Graduated from Université Paris Nanterre in Banking, Money & Financial Markets. Thesis focused on Shadow Banking and financial stability.",
+    "lazard": "Lazard Frères Gestion",
+    "lazardDesc": "Worked 9 months as Middle Office Rétrocessions, handling custodian certificates and retrocession fees.",
+    "rothschild": "Rothschild & Co Asset Management",
+    "rothschildDesc": "Managed retrocessions and monitored liabilities for 5 years. Participated in automation projects to improve processes.",
+    "studi": "Graduate Web Developer",
+    "studiDesc": "Completed full-stack training at Studi, final project in PHP/Symfony. Certified Web & Mobile Developer.",
+    "udemy": "Udemy Certifications",
+    "udemyDesc": "84-hour React course with Jonas Schmedtmann. Learned Hooks, Redux, Context API, React Router, and Next.js. Also completed React + TypeScript course.",
+    "freelance": "Freelance E-commerce Project",
+    "freelanceDesc": "Built an online store with Shopify and Next.js Commerce, styled with Tailwind CSS, optimized UX and performance."
+  },
+  "projects": {
+    "title": "My Projects",
+    "triptrack": {
+      "desc": "Personal React app for solo or group trips: create a trip, add travelers, log expenses and locations. Track who paid what and where, hassle-free.",
+      "slogan": "Follow your every money move"
+    },
+    "wildoasis": {
+      "title": "The Wild Oasis",
+      "desc": "Client app for cabin booking, built with Next.js, Supabase, and React Query as part of Udemy training. Users can browse and book cabins easily."
+    },
+    "reactbites": {
+      "desc": "Personal recipe app inspired by Marmiton – An intuitive platform to search recipes, check ingredients, and save favorite dishes."
+    },
+    "zoo": {
+      "desc": "Zoo Arcadia is a web application built during my training. Visitors can discover animals and habitats, and the back-office manages animals, enclosures, and staff."
+    },
+    "usePopcorn": {
+      "desc": "usePopcorn is a React app developed during my Udemy course. It allows searching movies, rating them, and saving favorites."
+    },
+    "reactMentoring": {
+      "desc": "React Mentoring is a React + TypeScript app created during my Udemy course. It focuses on strict typing and typed state management."
+    }
+  },
+  "about": {
+    "cards": {
+      "diplomas": {
+        "title": "Diplomas",
+        "content": [
+          "Professional Title: Web & Web Mobile Developer",
+          "Master 2 - Finance"
+        ]
+      },
+      "certifications": {
+        "title": "Udemy Certifications",
+        "content": [
+          "The Ultimate React Course 2025 - Jonas Schmedtmann",
+          "React & TypeScript - Maximilian Schwarzmüller"
+        ]
+      },
+      "inProgress": {
+        "title": "In Progress",
+        "content": [
+          "Udemy Certification: Master Node JS & Deno.js - Maximilian Schwarzmüller"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "contactMe": "Contact Me",
+    "myContacts": "My Contacts",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "success": "Thank you for your message!",
+    "error": "Oops! Something went wrong."
+  },
+  "laptop": {
+    "click": "Click on a keyboard",
+    "skills": "Skills"
+  },
+  "navbar": {
+    "about": "About",
+    "projects": "Projects",
+    "journey": "Journey",
+    "contact": "Contact"
+  }
+}

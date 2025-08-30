@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-scroll';
+import { useTranslation } from 'react-i18next';
+import LocaleSwitcher from './LocaleSwitcher';
 
 function Navbar() {
+  const { t } = useTranslation('common');
   const [showBurger, setShowBurger] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,14 +15,6 @@ function Navbar() {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsReady(true);
-    }, 7000);
-
-    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -96,6 +90,7 @@ function Navbar() {
 
             {/* Menu mobile */}
             <div className="mt-10 flex flex-col space-y-6 text-center text-2xl font-bold">
+              <LocaleSwitcher />
               <Link
                 to="about"
                 smooth={true}
@@ -103,7 +98,7 @@ function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className="cursor-pointer"
               >
-                À propos
+                {t('navbar.about')}
               </Link>
               <Link
                 to="projects"
@@ -112,7 +107,7 @@ function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className="cursor-pointer"
               >
-                Projets
+                {t('navbar.projects')}
               </Link>
               <Link
                 to="journey"
@@ -121,7 +116,7 @@ function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className="cursor-pointer"
               >
-                Parcours
+                {t('navbar.journey')}
               </Link>
               <Link
                 to="contact"
@@ -130,7 +125,7 @@ function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className="cursor-pointer"
               >
-                Contact
+                {t('navbar.contact')}
               </Link>
             </div>
           </motion.div>

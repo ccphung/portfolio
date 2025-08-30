@@ -1,0 +1,98 @@
+{
+  "header": {
+    "greeting": "Salut! Je suis Cédric Phung",
+    "webDeveloper": "Développeur Web",
+    "meAlt": "Photo de Cédric",
+    "availableToWork": "Disponible pour travailler"
+  },
+  "footer": {
+    "siteMadeBy": "Site made by {{name}} :)"
+  },
+  "aboutMe": {
+    "title": "À propos de moi",
+    "description": "Après 6 ans dans la finance, j’ai décidé de me lancer dans le développement web. Récemment, j'ai créé un projet e-commerce en freelance avec Shopify et Next.js, en utilisant Tailwind CSS pour le design et en optimisant l'expérience utilisateur. J'aime écrire du code propre et créer des interfaces web élégantes et fonctionnelles."
+  },
+  "journey": {
+    "circularText": "*MON*PARCOURS",
+    "master": "Master 2 - Finance",
+    "masterDesc": "Diplômé de l’Université Paris Nanterre en Banque, Monnaie et Marchés. Mémoire sur le Shadow Banking et la stabilité financière.",
+    "lazard": "Lazard Frères Gestion",
+    "lazardDesc": "Mission de 9 mois en Middle Office Rétrocessions, traitement des attestations dépositaires et calcul des rétrocessions.",
+    "rothschild": "Rothschild & Co Asset Management",
+    "rothschildDesc": "Gestion des rétrocessions et suivi du passif pendant 5 ans. Participation à des projets d'automatisation et d'optimisation des processus.",
+    "studi": "Développeur Web Diplômé",
+    "studiDesc": "Formation full-stack chez Studi avec projet final en PHP/Symfony. Certifié Développeur Web et Web Mobile.",
+    "udemy": "Certifications Udemy",
+    "udemyDesc": "Formation complète React de 84 heures avec Jonas Schmedtmann. Hooks, Redux, Context API, React Router, Next.js et React + TypeScript.",
+    "freelance": "Projet Freelance E-commerce",
+    "freelanceDesc": "Création d'une boutique en ligne avec Shopify et Next.js Commerce, style avec Tailwind CSS, optimisation de l'UX et des performances."
+  },
+  "projects": {
+    "title": "Mes projets",
+    "triptrack": {
+      "desc": "Application personnelle développée avec React, pour les voyages seuls ou en groupe : créez un voyage, ajoutez des voyageurs, enregistrez les dépenses et le lieu. Suivez qui a payé quoi et où, sans prise de tête.",
+      "slogan": "Suivez tous vos mouvements d'argent"
+    },
+    "wildoasis": {
+      "title": "The Wild Oasis",
+      "desc": "Application cliente de réservation de cabines, développée avec Next.js, Supabase et React Query, dans le cadre de la formation Udemy. Elle permet aux utilisateurs de consulter et réserver des cabines facilement."
+    },
+    "reactbites": {
+      "desc": "Application personnelle inspirée de Marmiton – Une plateforme intuitive pour rechercher des recettes, consulter les ingrédients et enregistrer ses plats favoris."
+    },
+    "zoo": {
+      "desc": "Zoo Arcadia est une application web développée dans le cadre de l’ECF de ma formation. Les visiteurs peuvent y découvrir les animaux et les habitats du zoo, tandis qu’un back-office permet de gérer les animaux, les enclos et le personnel."
+    },
+    "usePopcorn": {
+      "desc": "usePopcorn est une application React développée dans le cadre de ma formation Udemy. Elle permet de rechercher des films, les noter et de les enregistrer."
+    },
+    "reactMentoring": {
+      "desc": "React Mentoring est une application React avec TypeScript, créée durant ma formation Udemy. Elle permet de pratiquer le typage strict et la gestion d’état typée en React."
+    }
+  },
+  "about": {
+    "cards": {
+      "diplomas": {
+        "title": "Diplômes",
+        "content": [
+          "Titre Professionnel Développeur Web & Web Mobile",
+          "Master 2 - Finance"
+        ]
+      },
+      "certifications": {
+        "title": "Certifications Udemy",
+        "content": [
+          "The Ultimate React Course 2025 - Jonas Schmedtmann",
+          "React & TypeScript - Maximilian Schwarzmüller"
+        ]
+      },
+      "inProgress": {
+        "title": "En cours",
+        "content": [
+          "Certification Udemy : Master Node JS & Deno.js - Maximilian Schwarzmüller"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "contactMe": "Me contacter",
+    "myContacts": "Mes coordonnées",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer",
+    "success": "Merci pour votre message !",
+    "error": "Oops ! Une erreur est survenue."
+  },
+  "laptop": {
+    "click": "Cliquez sur une touche",
+    "skills": "Compétences"
+  },
+  "navbar": {
+    "about": "À propos",
+    "projects": "Projets",
+    "journey": "Parcours",
+    "contact": "Contact"
+  }
+}

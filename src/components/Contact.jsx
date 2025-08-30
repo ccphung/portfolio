@@ -2,8 +2,10 @@ import emailjs from '@emailjs/browser';
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import React, { useRef, useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
 export default function Contact() {
+  const { t } = useTranslation('common');
   const form = useRef();
   const [flipped, setFlipped] = useState(false);
 
@@ -14,10 +16,10 @@ export default function Contact() {
         publicKey: 'QZOlCSPn_d5Uj81Rb',
       })
       .then(() => {
-        toast.success('Merci pour votre message !');
+        toast.success(t('contact.success'));
         form.current.reset();
       })
-      .catch(() => toast.error('Oops ! Une erreur est survenue.'));
+      .catch(() => toast.error(t('contact.error')));
   };
 
   return (
@@ -28,7 +30,7 @@ export default function Contact() {
           <span
             className={`text-sm font-bold ${!flipped ? 'text-[#323232] underline' : 'text-gray-400'}`}
           >
-            Me contacter
+            {t('contact.contactMe')}
           </span>
           <label className="relative inline-block h-7 w-16 cursor-pointer">
             <input
@@ -43,7 +45,7 @@ export default function Contact() {
           <span
             className={`text-sm font-bold ${flipped ? 'text-[#323232] underline' : 'text-gray-400'}`}
           >
-            Mes coordonées
+            {t('contact.myContacts')}
           </span>
         </div>
 
@@ -62,13 +64,13 @@ export default function Contact() {
               <div className="flex gap-2">
                 <input
                   name="prenom"
-                  placeholder="Prénom"
+                  placeholder={t('contact.firstName')}
                   required
                   className="w-1/2 rounded-md border-2 border-[#323232] p-2 text-sm shadow-[3px_3px_0_#323232] outline-none"
                 />
                 <input
                   name="nom"
-                  placeholder="Nom"
+                  placeholder={t('contact.lastName')}
                   required
                   className="w-1/2 rounded-md border-2 border-[#323232] p-2 text-sm shadow-[3px_3px_0_#323232] outline-none"
                 />
@@ -76,7 +78,7 @@ export default function Contact() {
               <input
                 name="email"
                 type="email"
-                placeholder="Email"
+                placeholder={t('contact.email')}
                 required
                 className="w-full rounded-md border-2 border-[#323232] p-2 text-sm shadow-[3px_3px_0_#323232] outline-none"
               />
@@ -91,7 +93,7 @@ export default function Contact() {
                 type="submit"
                 className="mx-auto mt-2 rounded-md border-2 border-[#323232] bg-white px-6 py-2 font-bold text-[#323232] shadow-[3px_3px_0_#323232] transition active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
               >
-                Envoyer
+                {t('contact.send')}
               </button>
             </form>
           </div>

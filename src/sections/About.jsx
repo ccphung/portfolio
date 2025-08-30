@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
-
 import { motion, useInView } from 'framer-motion';
-
 import AboutItem from '../components/AboutItem';
 import Laptop from '../components/Laptop';
+import { useTranslation } from 'react-i18next';
 
 export default function About() {
+  const { t } = useTranslation('common');
   const textRef = useRef(null);
   const isInView = useInView(textRef, { once: true, threshold: 0.5 });
 
@@ -21,7 +21,7 @@ export default function About() {
         >
           <div className="mb-9">
             <h1 className="mt-9 font-mono text-5xl font-semibold uppercase">
-              About me
+              {t('aboutMe.title')}
             </h1>
             <motion.p
               initial={{ opacity: 0 }}
@@ -29,11 +29,7 @@ export default function About() {
               transition={{ delay: 0.3, duration: 1.5 }}
               className="text-xl text-gray-600"
             >
-              Après 6 ans dans la finance, j’ai décidé de me lancer dans le
-              développement web. Spécialisé en React et Symfony, j'adore
-              apprendre et affiner mes compétences. Mon but ? Ecrire du code
-              propre et créer des expériences web qui sont à la fois esthétiques
-              et fonctionnelles.
+              {t('aboutMe.description')}
             </motion.p>
           </div>
           <AboutItem />

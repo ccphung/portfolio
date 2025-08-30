@@ -1,7 +1,10 @@
 import React from 'react';
 import ContactCard from '../components/Contact';
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
+  const { t } = useTranslation('common');
+
   return (
     <footer className="relative h-[90vh] overflow-hidden bg-white md:min-h-[60vh] md:overflow-visible">
       <div className="absolute bottom-0 z-0 w-full">
@@ -35,7 +38,7 @@ export default function Footer() {
         <div className="z-1 absolute bottom-0 left-1/2 mb-5 -translate-x-1/2 transform">
           <ContactCard />
           <p className="mt-5 text-center text-white">
-            Site réalisé par Cédric :)
+            {t('footer.siteMadeBy', { name: 'Cédric' })}
           </p>
         </div>
       </div>

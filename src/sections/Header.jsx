@@ -3,6 +3,8 @@ import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import me from '../assets/images/header/me.png';
 import AnimatedPath from '../components/AnimatedPath';
+import { useTranslation } from 'react-i18next';
+import LocaleSwitcher from '../components/LocaleSwitcher';
 
 function Header() {
   const ref = useRef(null);
@@ -16,8 +18,9 @@ function Header() {
   const text2X = useTransform(scrollYProgress, [0, 1], ['0', '-300%']);
 
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const { t } = useTranslation('common');
 
-  const phrase = 'Developpeur Web';
+  const phrase = t('header.webDeveloper');
 
   return (
     <section
@@ -29,7 +32,7 @@ function Header() {
 
         <div className="mt-50 relative flex flex-col items-center justify-center md:mt-10">
           <h1 className="z-10 mb-5 text-center font-mono text-xl text-[#86d6fe] md:text-left md:text-4xl">
-            Salut! Je suis Cédric Phung
+            {t('header.greeting')}
           </h1>
           <h2 className="flex flex-wrap justify-center text-5xl font-bold uppercase text-white opacity-90 md:text-[8vw]">
             {phrase.split('').map((char, index) => {
@@ -76,8 +79,8 @@ function Header() {
           transition={{ delay: 1, duration: 0.6, ease: 'easeOut' }}
           style={{ x: text2X }}
         >
-          <span className="mr-4 text-3xl text-green-400">•</span> Disponible
-          pour travailler
+          <span className="mr-4 text-3xl text-green-400">•</span>{' '}
+          {t('header.availableToWork')}
         </motion.div>
       </div>
       <AnimatedPath />

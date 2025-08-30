@@ -16,6 +16,7 @@ import KeyButton from '../components/KeyButton';
 
 import laptopImage from '../assets/images/about/laptop.png';
 import FuzzyText from './FuzzyText';
+import { useTranslation } from 'react-i18next';
 
 const techData = {
   frontend: [
@@ -98,6 +99,7 @@ const techData = {
 };
 
 function Laptop() {
+  const { t } = useTranslation('common');
   const [selectedTech, setSelectedTech] = useState(null);
 
   const handleKeyClick = (tech) => {
@@ -113,7 +115,7 @@ function Laptop() {
             hoverIntensity={0.02}
             enableHover={true}
           >
-            Cliquez sur une touche
+            {t('laptop.click')}
           </FuzzyText>
         </div>
 
@@ -134,7 +136,10 @@ function Laptop() {
         <img src={laptopImage} alt="Laptop" className="w-full" />
 
         <div className="absolute z-10 hidden -translate-x-[20%] rotate-[33deg] text-center text-xl font-bold text-gray-400 md:left-[62%] md:top-[22%] md:block md:rotate-[31deg] xl:top-[21%]">
-          <p className="font-mono text-2xl text-gray-500">Compétences</p>
+          <p className="font-mono text-2xl text-gray-500">
+            {' '}
+            {t('laptop.skills')}
+          </p>
         </div>
 
         {selectedTech ? (
@@ -152,7 +157,7 @@ function Laptop() {
           <div className="z-10 text-center text-xl font-bold text-gray-400">
             <div className="absolute left-[50%] top-[25%] -translate-x-[20%] rotate-[31deg] md:left-[55%] md:top-[30%] md:rotate-[32deg]">
               <p className="animate-blink mb-2 flex font-mono text-xl text-gray-500 md:hidden">
-                Cliquez sur une touche
+                {t('laptop.click')}
               </p>
             </div>
 
