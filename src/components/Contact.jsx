@@ -100,7 +100,7 @@ export default function Contact() {
 
           {/*Contact Info */}
           <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 rounded-lg border-2 border-[#323232] bg-gray-200 p-6 text-center text-[#323232] shadow-[4px_4px_0_#323232] [backface-visibility:hidden] [transform:rotateY(180deg)]">
-            <h2 className="text-xl font-bold">Mes coordonnées</h2>
+            <h2 className="text-xl font-bold"> {t('contact.myContacts')}</h2>
             <div className="flex flex-col items-start gap-2 text-sm">
               <div className="flex">
                 <PhoneIcon className="mr-3 h-6 w-6" /> +33 6 29 36 05 91
